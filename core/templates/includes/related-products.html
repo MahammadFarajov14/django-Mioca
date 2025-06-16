@@ -1,0 +1,64 @@
+<div class="related-product-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center line-height-1">
+                    <h2 class="title">Related Products</h2>
+                    <p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="new-product-slider swiper-container slider-nav-style-1 pb-100px">
+            <div class="new-product-wrapper swiper-wrapper">
+                <div class="new-product-item swiper-slide">
+                    {% for product in products %}
+                    <!-- Single Prodect -->
+                    <div class="product">
+                        <div class="thumb">
+                            <a href="single-product.html" class="image">
+                                <img src="{{product.cover_image.url}}" alt="Product" />
+                                <img class="hover-image" src="{{product.cover_image.url}}" alt="Product" />
+                            </a>
+                            <span class="badges">
+                                <span class="new">{{product.type}}</span>
+                            </span>
+                            <div class="actions">
+                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
+                                        class="pe-7s-like"></i></a>
+                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                        class="pe-7s-look"></i></a>
+                                <a href="compare.html" class="action compare" title="Compare"><i
+                                        class="pe-7s-refresh-2"></i></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <span class="ratings">
+                                <span class="rating-wrap">
+                                    <span class="star" style="width: 100%"></span>
+                                </span>
+                                <span class="rating-num">( 5 Review )</span>
+                            </span>
+                            <h5 class="title"><a href="single-product.html">{{product.title}}
+                                </a>
+                            </h5>
+                            <span class="price">
+                                <span class="new">${{product.price}}</span>
+                            </span>
+                        </div>
+                        <button title="Add To Cart" class=" add-to-cart update-cart">Add
+                            To Cart</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-buttons">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</div>

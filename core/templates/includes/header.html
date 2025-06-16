@@ -1,0 +1,189 @@
+{% load static i18n tags %}
+
+{% if request.user.is_authenticated %}
+
+{% get_basket request.user as basket %}
+{% get_wishlist request.user as wishlist %}
+
+{% endif %}
+
+<header>
+    <div class="header-main sticky-nav ">
+        <div class="container position-relative">
+            <div class="row">
+                <div class="col-auto align-self-center">
+                    <div class="header-logo">
+                        <a href="{% url 'home' %}"><img src="{% static 'images/logo/logo.png' %}" alt="Site Logo" /></a>
+                    </div>
+                </div>
+                <div class="col align-self-center d-none d-lg-block"> 
+                    <div class="main-menu">
+                        <ul>
+                            <li class="dropdown"><a href="{% url 'home' %}">{% trans 'Home' %} </a></li>
+                            <li><a href="{% url 'about' %}">{% trans 'About' %}</a></li>
+                            <li class="dropdown position-static"><a href="{% url 'about' %}">Pages <i class="fab fa-angle-down"></i></a>
+                                <ul class="mega-menu d-block">
+                                    <li class="d-flex">
+                                        <ul class="d-block">
+                                            <li class="title"><a href="#">Inner Pages</a></li>
+                                            <li><a href="{% url '404'%}">404 Page</a></li>
+                                            <li><a href="{% url 'faq'%}">Faq Page</a></li>
+                                        </ul>
+                                        <ul class="d-block">
+                                            <li class="title"><a href="#">Other Shop Pages</a></li>
+                                            <li><a href="{% url 'cart'%}">Cart Page</a></li>
+                                            <li><a href="{% url 'checkout'%}">Checkout Page</a></li>
+                                            <li><a href="{% url 'compare'%}">Compare Page</a></li>
+                                            <li><a href="{% url 'wishlist'%}">Wishlist Page</a></li>
+                                        </ul>
+                                        <ul class="d-block">
+                                            <li class="title"><a href="#">Related Shop Pages</a></li>
+                                            <li><a href="{% url 'myAccount'%}">Account Page</a></li>
+                                            <li><a href="{% url 'login'%}">Login & Register Page</a></li>
+                                            <li><a href="{% url 'emptyCart'%}">Empty Cart Page</a></li>
+                                        </ul>
+                                        <ul class="d-flex align-items-center p-0 border-0">
+                                            <li>
+                                                <a class="p-0" href="shop-left-sidebar.html"><img
+                                                        class="img-responsive w-100"
+                                                        src="{% static 'images/banner/menu-banner-1.jpg' %}" alt=""></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown position-static"><a href="{% url 'shop' %}">{% trans 'Shop' %} </a>                                   
+                            </li>
+                            <li class="dropdown "><a href="{% url 'blogs' %}">Blog</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                            <li class="dropdown mt-30px">
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <select name="language" onchange="this.form.submit()" style="width: 60px;
+                                    height: 48px;
+                                    border-radius: 5px;
+                                    padding: 9px;">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                        <option class="nav-link" value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
+                                            selected{% endif %}> {#8#}
+                                            {{ language.code }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Header Action Start -->
+                <div class="col col-lg-auto align-self-center pl-0">
+                    <div class="header-actions">
+                        <!-- Single Wedge Start -->
+                        <a href="#" class="header-action-btn" data-bs-toggle="modal" data-bs-target="#searchActive">
+                            <i class="pe-7s-search"></i>
+                        </a>
+                        <!-- Single Wedge End -->
+                        <div class="header-bottom-set dropdown">
+                            <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
+                                    class="pe-7s-users"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a class="dropdown-item" href="{% url 'myAccount' %}">My account</a></li>
+                                <li><a class="dropdown-item" href="{% url 'checkout' %}">Checkout</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li><a class="dropdown-item" href="{% url 'logout' %}"> {{request.user.username}} Logout</a></li>
+                                {% else %}
+                                <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <!-- Single Wedge Start -->
+                        <a href="#offcanvas-wishlist" class="header-action-btn offcanvas-toggle">
+                            <i class="pe-7s-like"></i>
+                        </a>
+                        <!-- Single Wedge End -->
+                        <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                            <i class="pe-7s-shopbag"></i>
+                            {% if basket %}
+                            <span id="cart_quantity" class="header-action-num">{{basket.len}}</span>
+                            {% endif %}
+                            <!-- <span class="cart-amount">€30.00</span> -->
+                        </a>
+                        <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
+                            <i class="pe-7s-menu"></i>
+                        </a>
+                    </div>
+                    <!-- Header Action End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="offcanvas-overlay"></div>
+
+    <!-- OffCanvas Wishlist Start -->
+    <div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist">
+        <div class="inner">
+            <div class="head">
+                <span class="title">Wishlist</span>
+                <button class="offcanvas-close">×</button>
+            </div>
+            <div class="body customScroll">
+                <ul class="minicart-product-list">
+                    {% for item in wishlist %}
+                    <li>
+                        <a href="single-product.html" class="image"><img src="{{item.product.cover_image.url}}"
+                                alt="Cart product Image"></a>
+                        <div class="content">
+                            <a href="single-product.html" class="title">{{item.product.title}}</a>
+                            <span class="quantity-price"><span class="amount">${{item.product.price}}</span></span>
+                            <a href="#" class="remove-wishlist" data-item="{{item.id}}" >×</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="foot">
+                <div class="buttons">
+                    <a href="{% url 'wishlist' %}" class="btn btn-dark btn-hover-primary mt-30px">view wishlist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OffCanvas Wishlist End -->
+    <!-- OffCanvas Cart Start -->
+    <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
+        <div class="inner">
+            <div class="head">
+                <span class="title">Cart</span>
+                <button class="offcanvas-close">×</button>
+            </div>
+            
+            <div class="body customScroll">
+                <ul class="minicart-product-list">
+
+                    {% for item in basket.basketItem.all %}
+                        <li>
+                            <a href="single-product.html" class="image"><img src="{{item.product.cover_image.url}}"
+                                    alt="Cart product Image"></a>
+                            <div class="content">
+                                <a href="single-product.html" class="title">{{item.product.title}}</a>
+                                <span class="quantity-price">{{item.quantity}} x <span class="amount">${{item.product.price}}</span></span>
+                                <a href="#"  class="remove-cart" data-item="{{item.id}}"> × </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="foot">
+                <div class="buttons mt-30px">
+                    <a href="{% url 'cart' %}" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-outline-dark current-btn">checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OffCanvas Cart End -->

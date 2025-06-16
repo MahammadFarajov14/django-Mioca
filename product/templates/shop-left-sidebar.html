@@ -1,0 +1,538 @@
+{% extends 'base.html' %}
+
+{% load static tags %}
+
+{% block title %}
+
+    <title>Shop</title>
+
+{% endblock %}
+{% block content %}
+
+
+    <!-- OffCanvas Menu Start -->
+    <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">Single
+        <button class="offcanvas-close"></button>
+
+        <div class="inner customScroll">
+
+            <div class="offcanvas-menu mb-4">
+                <ul>
+                    <li><a href="#"><span class="menu-text">Home</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="index.html"><span class="menu-text">Home 1</span></a></li>
+                            <li><a href="index-2.html"><span class="menu-text">Home 2</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li>
+                        <a href="#"><span class="menu-text">Pages</span></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#"><span class="menu-text">Inner Pages</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="404.html">404 Page</a></li>
+                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a href="faq.html">Faq Page</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon Page</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span class="menu-text"> Other Shop Pages</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="cart.html">Cart Page</a></li>
+                                    <li><a href="checkout.html">Checkout Page</a></li>
+                                    <li><a href="compare.html">Compare Page</a></li>
+                                    <li><a href="wishlist.html">Wishlist Page</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span class="menu-text">Related Shop Page</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="my-account.html">Account Page</a></li>
+                                    <li><a href="login.html">Login & Register Page</a></li>
+                                    <li><a href="empty-cart.html">Empty Cart Page</a></li>
+                                    <li><a href="thank-you-page.html">Thank You Page</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="menu-text">Shop</span></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#"><span class="menu-text">Shop Page</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="shop-3-column.html">Shop 3 Column</a></li>
+                                    <li><a href="shop-4-column.html">Shop 4 Column</a></li>
+                                    <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
+                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a>
+                                    </li>
+                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a>
+                                    </li>
+                                    <li><a href="cart.html">Cart Page</a></li>
+                                    <li><a href="checkout.html">Checkout Page</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span class="menu-text">product Details Page</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="single-product.html">Product Single</a></li>
+                                    <li><a href="single-product-variable.html">Product Variable</a></li>
+                                    <li><a href="single-product-affiliate.html">Product Affiliate</a></li>
+                                    <li><a href="single-product-group.html">Product Group</a></li>
+                                    <li><a href="single-product-tabstyle-2.html">Product Tab 2</a></li>
+                                    <li><a href="single-product-tabstyle-3.html">Product Tab 3</a></li>
+                                    <li><a href="single-product-slider.html">Product Slider</a></li>
+                                    <li><a href="single-product-gallery-left.html">Product Gallery Left</a>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span class="menu-text">Single Product Page</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="single-product-gallery-right.html">Product Gallery
+                                            Right</a> </li>
+                                    <li><a href="single-product-sticky-left.html">Product Sticky Left</a>
+                                    </li>
+                                    <li><a href="single-product-sticky-right.html">Product Sticky Right</a>
+                                    </li>
+                                    <li><a href="compare.html">Compare Page</a></li>
+                                    <li><a href="wishlist.html">Wishlist Page</a></li>
+                                    <li><a href="my-account.html">Account Page</a></li>
+                                    <li><a href="login.html">Login & Register Page</a></li>
+                                    <li><a href="empty-cart.html">Empty Cart Page</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="menu-text">Blog</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="blog-grid.html">Blog Grid Page</a></li>
+                            <li><a href="blog-grid-left-sidebar.html">Grid Left Sidebar</a></li>
+                            <li><a href="blog-grid-right-sidebar.html">Grid Right Sidebar</a></li>
+                            <li><a href="blog-single.html">Blog Single Page</a></li>
+                            <li><a href="blog-single-left-sidebar.html">Single Left Sidebar</a></li>
+                            <li><a href="blog-single-right-sidebar.html">Single Right Sidbar</a>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- OffCanvas Menu End -->
+            <div class="offcanvas-social mt-auto">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-google"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- OffCanvas Menu End -->
+
+    <!-- breadcrumb-area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 text-center">
+                    <h2 class="breadcrumb-title">Shop</h2>
+                    <!-- breadcrumb-list start -->
+                    <ul class="breadcrumb-list">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">Shop</li>
+                    </ul>
+                    <!-- breadcrumb-list end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb-area end -->
+
+
+
+    <!-- Shop Page Start  -->
+    <div class="shop-category-area pt-100px pb-100px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 order-lg-last col-md-12 order-md-first">
+                    <div class="sidebar-widget-image">
+                        <a href="#" class="single-banner">
+                            <img src="{% static 'images/banner/12.jpg' %}" alt="">
+                        </a>
+                    </div>
+                    <!-- Shop Top Area Start -->
+                    <div class="desktop-tab">
+                        <div class="shop-top-bar d-flex">
+                            <!-- Left Side End -->
+                            <div class="shop-tab nav">
+                                <a class="active" href="#shop-grid" data-bs-toggle="tab">
+                                    <i class="fa fa-th" aria-hidden="true"></i>
+                                </a>
+                                <a href="#shop-list" data-bs-toggle="tab">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <!-- Right Side Start -->
+                            <div class="select-shoing-wrap d-flex align-items-center">
+                                <div class="shot-product">
+                                    <p>Sort By:</p>
+                                </div>
+                                <div class="shop-select">
+                                    <select class="shop-sort ordering_sort" id="ordering_sort">
+                                        <option data-display="Default">Default</option>
+                                        <option id="ascending_title" value="1"> Name, A to Z</option>
+                                        <option value="2"> Name, Z to A</option>
+                                        <option value="3"> Price, low to high</option>
+                                        <option value="4"> Price, high to low</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <!-- Right Side End -->
+                            <!-- Right Side Start -->
+                            <div class="select-shoing-wrap d-flex align-items-center">
+                                <div class="shot-product">
+                                    <p>Show:</p>
+                                </div>
+                                <div class="shop-select show">
+                                    <select class="shop-sort pagination_sort" id="pagination_sort">
+                                        <option data-display="12">12</option>
+                                        <option value="1"> 12</option>
+                                        <option value="2"> 10</option>
+                                        <option value="3"> 25</option>
+                                        <option value="4"> 20</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <!-- Right Side End -->
+                            <!-- Left Side start -->
+                            <a class="compare-product" href="{% url 'compare' %}">Product Compare <span>({{product.len}}) </span></a> 
+                        </div>
+                    </div>
+                    <!-- Shop Top Area End -->
+
+                    <!-- Mobile shop bar -->
+                    <div class="shop-top-bar mobile-tab">
+                        <!-- Left Side End -->
+                        <div class="shop-tab nav d-flex justify-content-between">
+                            <div class="shop-tab nav">
+                                <a class="active" href="#shop-grid" data-bs-toggle="tab">
+                                    <i class="fa fa-th" aria-hidden="true"></i>
+                                </a>
+                                <a href="#shop-list" data-bs-toggle="tab">
+                                    <i class="fa fa-list" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <!-- Right Side Start -->
+                            <div class="select-shoing-wrap d-flex align-items-center">
+                                <div class="shot-product">
+                                    <p>Sort By:</p>
+                                </div>
+                                <div class="shop-select">
+                                    <div class="shop-sort">
+                                        <a data-display="Default">Default</a>
+                                        <a href="#" id="ascending_title" value="1"> Name, A to Z</a>
+                                        <a value="2"> Name, Z to A</a>
+                                        <a value="3"> Price, low to high</a>
+                                        <a value="4"> Price, high to low</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Side End -->
+                        <!-- Right Side Start -->
+                        <div class="select-shoing-wrap d-flex align-items-center justify-content-between">
+                            <div class="select-shoing-wrap d-flex align-items-center">
+                                <div class="shot-product">
+                                    <p>Show:</p>
+                                </div>
+                                <div class="shop-select show">
+                                    <select class="shop-sort">
+                                        <option data-display="12">12</option>
+                                        <option value="1"> 12</option>
+                                        <option value="2"> 10</option>
+                                        <option value="3"> 25</option>
+                                        <option value="4"> 20</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <!-- Right Side End -->
+                            <!-- Left Side start -->
+                            <p class="compare-product">Product Compare <span>({{ product.count }}) </span></p>
+                        </div>
+                    </div>
+                    <!-- Mobile shop bar -->
+
+                    <!-- Shop Bottom Area Start -->
+                    <div class="shop-bottom-area">
+
+                        <!-- Tab Content Area Start -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="shop-grid">
+                                        <div class="row mb-n-30px price-filter-products">
+                                            {% for product in products %}
+                                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
+                                                data-aos-delay="200">
+                                                <!-- Single Prodect -->
+                                                <div class="product">
+                                                    <div class="thumb">
+                                                        <a href="{% url 'productdetail' product.slug %}" class="image">
+                                                            <img src="{{product.cover_image.url}}"
+                                                                alt="Product" />
+                                                            <img class="hover-image"
+                                                                src="{{product.cover_image.url}}" alt="Product" />
+                                                        </a>
+                                                        <span class="badges">
+                                                            <span class="new">{{product.type}}</span>
+                                                        </span>
+                                                        <div class="actions">
+                                                            <a href="{% url 'wishlist' %}" id="add-wishlist" data-product="{{product.id}}"  class="action wishlist" 
+                                                                title="Wishlist"><i class="pe-7s-like"></i></a>
+                                                            <a href="#" class="action quickview"
+                                                                data-link-action="quickview" title="Quick view"
+                                                                data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                                                                    class="pe-7s-look"></i></a>
+                                                            <a href="compare.html" class="action compare"
+                                                                title="Compare"><i class="pe-7s-refresh-2"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <span class="ratings">
+                                                                <td class="pro-ratting">
+                                                                    {% for i in product.ratingrange %}
+                                                                        <i class="fa fa-star"></i>
+                                                                    {% endfor %}
+                                                                </td>
+                                                            <span class="rating-num d-none">( {{product.reviewlen}} Review )</span>
+                                                        </span>
+                                                        <h5 class="title"><a href="{% url 'productdetail' product.slug %}">{{product.title}}
+                                                            </a>
+                                                        </h5>
+                                                        <span class="price">
+                                                            <span class="new">${{product.price}}</span>
+                                                        </span>
+                                                    </div>
+                                                    <button title="Add To Cart" data-product="{{product.id}}" data-action="add" class="update-cart add-to-cart">Add
+                                                        To Cart</button>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="shop-list">
+                                        {% for product in products %}
+                                        <div class="shop-list-wrapper">
+                                            <a href="{% url 'productdetail' product.slug %}">
+
+                                            <div class="row">
+                                                <div class="col-md-5 col-lg-5 col-xl-4">
+                                                    <div class="product">
+                                                        <div class="thumb">
+                                                            <a href="#" class="image">
+                                                                <img src="{{product.cover_image.url}}"
+                                                                    alt="Product" />
+                                                                <img class="hover-image"
+                                                                    src="{{product.cover_image.url}}"
+                                                                    alt="Product" />
+                                                            </a>
+                                                            <span class="badges">
+                                                                <span class="new">{{product.type}}</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7 col-lg-7 col-xl-8">
+                                                    <div class="content-desc-wrap">
+                                                        <div class="content">
+                                                            <span class="ratings">
+                                                                <td class="pro-ratting">
+                                                                    {% for i in product.ratingrange %}
+                                                                        <i class="fa fa-star"></i>
+                                                                    {% endfor %}
+                                                                </td>
+                                                                <span class="rating-num d-none">( {{product.reviewlen}} Review )</span>
+                                                            </span>
+                                                            <h5 class="title"><a href="{% url 'productdetail' product.slug %}">{{product.title}}
+                                                            </a></h5>
+                                                            <p>{{product.descriptiton}}</p>
+                                                        </div>
+                                                        <div class="box-inner">
+                                                            <span class="price">
+                                                                <span class="new">${{product.price}}</span>
+                                                            </span>
+                                                            <div class="actions">
+                                                                <a href="{% url 'wishlist' %}" class="action wishlist"  id="add-wishlist" data-product="{{product.id}}"
+                                                                    title="Wishlist"><i class="pe-7s-like"></i></a>
+                                                                <a href="#" class="action quickview"
+                                                                    data-link-action="quickview" title="Quick view"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#exampleModal"><i
+                                                                        class="pe-7s-search"></i></a>
+                                                                <a href="compare.html" class="action compare"
+                                                                    title="Compare"><i class="pe-7s-refresh-2"></i></a>
+                                                            </div>
+                                                            <button title="Add To Cart" data-product="{{product.id}}" data-action="add" class=" add-to-cart update-cart">Add
+                                                                To Cart</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tab Content Area End -->
+
+                        <!--  Pagination Area Start -->
+                        <div class="pro-pagination-style text-center text-lg-end" data-aos="fade-up" data-aos-delay="200">
+                            <div class="pages text-center">
+                                <ul>
+                                    {% if page_obj.has_previous %}
+                                        <li class="li"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% for page in page_obj.paginator.page_range %}
+                                        {% if page is page_obj.number %}
+                                            <li class="li"><a class="page-link active" href="?page={{page}}">{{page}}</a></li>
+                                        {% else %}
+                                            <li class="li"><a class="page-link" href="?page={{page}}">{{page}}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if page_obj.has_next %}
+                                        <li class="li"><a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!--  Pagination Area End -->
+                    </div>
+                    <!-- Shop Bottom Area End -->
+                </div>
+                <!-- Sidebar Area Start -->
+                <div class="col-lg-3 order-lg-first col-md-12 order-md-last">
+                    <div class="shop-sidebar-wrap">
+                        <!-- Sidebar single item -->
+                        <div class="sidebar-widget">
+                            <h4 class="sidebar-title">Categories</h4>
+                            <div class="sidebar-widget-category">
+                                <ul>
+                                    <li><a href="{% url 'shop' %}" class="selected m-0"><i class="fa fa-angle-right"></i> All </a></li>
+                                    {% for category in categories  %}
+                                    {% if not category.parent %}
+                                        <li>
+                                            <a href="{% url 'shop' %}?category={{category.id}}" class=""><i class="fa fa-angle-right"></i> 
+                                                {{category.title}}
+                                                <!-- <span>(12)</span>  -->
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Sidebar single item -->
+                        <div class="sidebar-widget">
+                            <h4 class="sidebar-title">Color</h4>
+                            <div class="sidebar-widget-color">
+                                <ul>
+                                    <li><a href="{% url 'shop' %}" class="selected m-0"><i class="fa fa-angle-right"></i> All </a></li>
+
+                                    {% for color in colors %}
+                                    <li><a href="{% url 'shop' %}?color={{color.id}}" class=""><i class="fa fa-angle-right"></i> {{color.title}} </a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Sidebar single item -->
+                        <div class="sidebar-widget">
+                            <h4 class="sidebar-title">Size</h4>
+                            <div class="sidebar-widget-size">
+                                <ul>
+                                    <li><a href="{% url 'shop' %}" class="selected m-0"><i class="fa fa-angle-right"></i> All </a></li>
+
+                                    {% for size in sizes %}
+                                    <li><a href="{% url 'shop' %}?size={{size.id}}" class=""><i class="fa fa-angle-right"></i> {{size.title}} </a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Sidebar single item -->
+                        <!-- Sidebar single item -->
+                        <div class="sidebar-widget mt-8">
+                            <h4 class="sidebar-title">Price Filter</h4>
+                            <h4 class="sidebar-title">From:</h4>
+                            <div class="price-filter">
+                                <div class="price-slider-amount">
+                                    <a href="{% url 'shop' %}?from_price=${slider-range.value}" id="max_price" class="p-0 h-auto lh-1" ></a>
+                                </div>
+                                <input type="range" name="range" min="{{min_max_price.price__min}}" max="{{min_max_price.price__max}}" oninput="max_price.innerHTML=this.value" id="slider-range" ></input>
+                            </div>
+                        </div>
+                        <div class="sidebar-widget mt-8">
+                            <h4 class="sidebar-title">Price Filter</h4>
+                            <h4 class="sidebar-title">To:</h4>
+                            <div class="price-filter">
+                                <div class="price-slider-amount">
+                                    <a href="{% url 'shop' %}?from_price=${slider-range.value}" id="min_price" class="p-0 h-auto lh-1" ></a>
+                                </div>
+                                <input type="range" name="range" min="{{min_max_price.price__min}}" max="{{min_max_price.price__max}}" oninput="min_price.innerHTML=this.value" id="slider-range-min" ></input>
+                            </div>
+                        </div>
+                        <!-- Sidebar single item -->
+                        <div class="sidebar-widget-image ">
+                            <a href="#" class="single-banner">
+                                <img src="images/banner/11.jpg" alt="">
+                            </a>
+                        </div>
+                        <!-- Sidebar single item -->
+                        <div class="sidebar-widget tag m-0">
+                            <h4 class="sidebar-title">Tags</h4>
+                            <div class="sidebar-widget-tag">
+                                <ul>
+                                    <li><a href="{% url 'shop' %}" class="selected m-0"><i class="fa fa-angle-right"></i> All </a></li>
+
+                                    {% for tag in tags %}
+                                    <li><a href="{% url 'shop' %}?tag={{tag.id}}">{{tag.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Sidebar single item -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Page End  -->
+
+{% endblock %}
+
+{% block script %}
+
+    <script src="{% static 'js/product.js' %}"></script>
+    <script src="{% static 'js/wishlist.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,421 @@
+openapi: 3.0.3
+info:
+  title: ''
+  version: 0.0.0
+paths:
+  /en/api/product/{id}/:
+    get:
+      operationId: en_api_product_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - en
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCreate'
+          description: ''
+    put:
+      operationId: en_api_product_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - en
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCreate'
+          description: ''
+    patch:
+      operationId: en_api_product_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - en
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProductCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProductCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProductCreate'
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCreate'
+          description: ''
+    delete:
+      operationId: en_api_product_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - en
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /en/api/products/:
+    get:
+      operationId: en_api_products_list
+      tags:
+      - en
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+          description: ''
+    post:
+      operationId: en_api_products_create
+      tags:
+      - en
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductCreate'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCreate'
+          description: ''
+  /en/api/subscribers/:
+    post:
+      operationId: en_api_subscribers_create
+      tags:
+      - en
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscribeCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SubscribeCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SubscribeCreate'
+        required: true
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscribeCreate'
+          description: ''
+  /en/api/tags/:
+    get:
+      operationId: en_api_tags_list
+      description: Use To See All Of The Tags
+      tags:
+      - en
+      security:
+      - basicAuth: []
+      - cookieAuth: []
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductTag'
+          description: ''
+  /en/auth/token/:
+    post:
+      operationId: en_auth_token_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
+      tags:
+      - en
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserTokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserTokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserTokenObtainPair'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserTokenObtainPair'
+          description: ''
+  /en/auth/token/refresh/:
+    post:
+      operationId: en_auth_token_refresh_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
+      tags:
+      - en
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+components:
+  schemas:
+    PatchedProductCreate:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 200
+        cover_image:
+          type: string
+          format: uri
+        tags:
+          type: array
+          items:
+            type: integer
+        category:
+          type: integer
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 200
+        cover_image:
+          type: string
+          format: uri
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductTag'
+        category:
+          $ref: '#/components/schemas/ProductCategory'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - category
+      - cover_image
+      - id
+      - price
+      - quantity
+      - tags
+      - title
+    ProductCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 200
+        parent:
+          type: integer
+          nullable: true
+      required:
+      - id
+      - title
+    ProductCreate:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 200
+        cover_image:
+          type: string
+          format: uri
+        tags:
+          type: array
+          items:
+            type: integer
+        category:
+          type: integer
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        quantity:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - category
+      - cover_image
+      - price
+      - quantity
+      - title
+    ProductTag:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 200
+      required:
+      - id
+      - title
+    SubscribeCreate:
+      type: object
+      properties:
+        email:
+          type: string
+          maxLength: 200
+      required:
+      - email
+    TokenRefresh:
+      type: object
+      properties:
+        access:
+          type: string
+          readOnly: true
+        refresh:
+          type: string
+          writeOnly: true
+      required:
+      - access
+      - refresh
+    UserTokenObtainPair:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+      required:
+      - password
+      - username
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
